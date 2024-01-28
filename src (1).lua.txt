@@ -691,6 +691,8 @@ end)
                 bar.Size = UDim2.new(def / max, 0, 1, 0)
                 value.Text = def .. "/" .. max
                 
+
+                
                 local function Slide(input)
                     local pos = UDim2.new(math.clamp((input.Position.X - slider.AbsolutePosition.X) / slider.AbsoluteSize.X, 0, 1), 0, 1, 0)
                     bar.Size = pos
@@ -701,13 +703,14 @@ end)
                 end
 
                 slider.InputBegan:Connect(function(input)
-                    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                         Slide(input)
                         Dragging = true
                         SliderDragging = true
                     end
                 end)
-    
+
+
                 slider.InputEnded:Connect(function(input)
                     if input.UserInputType == Enum.UserInputType.MouseButton1 then
                         Dragging = false
