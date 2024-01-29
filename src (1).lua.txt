@@ -711,7 +711,7 @@ end)
                 end)
 
 
-                slider.InputEnded:Connect(function(input)
+  slider.InputEnded:Connect(function(input)
                     if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                         Dragging = false
                         SliderDragging = false
@@ -719,7 +719,7 @@ end)
                 end)
     
                 userinputservice.InputChanged:Connect(function(input)
-                    if Dragging and input.UserInputType == Enum.UserInputType.MouseMovement or  input.UserInputType == Enum.UserInputType.Touch then
+                    if Dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
                         Slide(input)
                     end
                 end)
@@ -1164,7 +1164,7 @@ end)
                 end)
 
                 gradient.InputEnded:Connect(function(input)
-                    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                         if (ColorInput) then
                             ColorInput:Disconnect()
                         end
@@ -1174,7 +1174,7 @@ end)
                 end)
 
                 colorslider.InputBegan:Connect(function(input)
-                    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                         if (HueInput) then
                             HueInput:Disconnect()
                         end
@@ -1193,7 +1193,7 @@ end)
                 end)
 
                 colorslider.InputEnded:Connect(function(input)
-                    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                         if (HueInput) then
                             HueInput:Disconnect()
                         end
