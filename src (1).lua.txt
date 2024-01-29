@@ -712,14 +712,14 @@ end)
 
 
                 slider.InputEnded:Connect(function(input)
-                    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                         Dragging = false
                         SliderDragging = false
                     end
                 end)
     
                 userinputservice.InputChanged:Connect(function(input)
-                    if Dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+                    if Dragging and input.UserInputType == Enum.UserInputType.MouseMovement or  input.UserInputType == Enum.UserInputType.Touch then
                         Slide(input)
                     end
                 end)
