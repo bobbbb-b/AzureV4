@@ -915,7 +915,7 @@ function library:Init(key)
     backgroundGradient.Name = "backgroundGradient"
     backgroundGradient.Parent = background
 local UserInputService = game:GetService("UserInputService")
-local frame = edge and background
+local frame = edge and background and container and containerEdge and bar
 local dragging
 local dragInput
 local dragStart
